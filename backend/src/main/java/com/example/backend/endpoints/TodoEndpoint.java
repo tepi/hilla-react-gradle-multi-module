@@ -1,4 +1,4 @@
-package com.example.backend.endpoints.helloreact;
+package com.example.backend.endpoints;
 
 import com.example.backend.data.Todo;
 import com.example.backend.repository.TodoRepository;

@@ -9,7 +9,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'hilla-react-gradle-parent'
+rootProject.name = 'hilla-react-gradle-multi-module'
 
 include 'backend'
 include 'webapp'
