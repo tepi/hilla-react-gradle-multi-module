@@ -1,13 +1,13 @@
-import {VerticalLayout} from "@hilla/react-components/VerticalLayout.js";
-import {TextField} from "@hilla/react-components/TextField.js";
-import {Button} from "@hilla/react-components/Button.js";
+import {VerticalLayout} from "@vaadin/react-components/VerticalLayout.js";
+import {TextField} from "@vaadin/react-components/TextField.js";
+import {Button} from "@vaadin/react-components/Button.js";
 import * as React from "react";
 import {useState} from "react";
-import {TextFieldElement} from "@hilla/react-components/TextField.js";
+import {TextFieldElement} from "@vaadin/react-components/TextField.js";
 import {TodoEndpoint} from "Frontend/generated/endpoints";
 import Todo from "Frontend/generated/com/example/backend/data/Todo";
-import {Checkbox} from "@hilla/react-components/Checkbox.js";
-import {Scroller} from "@hilla/react-components/Scroller.js";
+import {Checkbox} from "@vaadin/react-components/Checkbox.js";
+import {Scroller} from "@vaadin/react-components/Scroller.js";
 
 
 export function TodoReactView() {

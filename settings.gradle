@@ -1,11 +1,10 @@
 pluginManagement {
     repositories {
-        mavenLocal()
-        maven { url = 'https://maven.vaadin.com/vaadin-prereleases' }
         gradlePluginPortal()
+        maven { url = 'https://maven.vaadin.com/vaadin-prereleases' }
     }
     plugins {
-        id 'dev.hilla' version "${hillaVersion}"
+        id 'com.vaadin' version "$vaadinVersion"
     }
 }
 

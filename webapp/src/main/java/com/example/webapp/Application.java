@@ -16,7 +16,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  *
  */
 @SpringBootApplication
-@ComponentScan("com.example.backend")
+@ComponentScan({"com.example.backend", "com.example.webapp"})
 @EnableJpaRepositories("com.example.backend")
 @EntityScan(basePackages = {"com.example.backend"})
 @Theme(value = "my-hilla-react-app")

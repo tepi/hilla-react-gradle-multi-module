@@ -1,54 +1,35 @@
 buildscript {
-    repositories {
-		mavenLocal()
-    	mavenCentral()
-	    maven { setUrl("https://maven.vaadin.com/vaadin-prereleases") }
-	}
-	dependencies {
-		classpath('dev.hilla:engine-gradle-plugin:2.1-SNAPSHOT')
-		classpath('com.vaadin:flow-gradle-plugin:24.1-SNAPSHOT')
+	repositories {
+		mavenCentral()
+		maven { setUrl("https://maven.vaadin.com/vaadin-prereleases") }
+		maven { setUrl("https://repo.spring.io/milestone") }
 	}
 }
+
 plugins {
-	id 'org.springframework.boot' version '3.0.2'
-	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'org.springframework.boot' version '3.2.2'
+	id 'io.spring.dependency-management' version '1.1.4'
 	id 'java'
-}
-
-apply plugin: 'com.vaadin'
-apply plugin: 'dev.hilla.engine'
-
-// uncomment the following if you want to build/run in production mode:
-vaadin {
-	productionMode = true
+	id 'com.vaadin' version "$vaadinVersion"
 }
 
 hilla {
-	exposedPackagesToParser = ["com.example.backend"]
+	exposedPackagesToParser = ["com.example.backend", "com.example.webapp"]
 }
 
 repositories {
-	mavenLocal()
 	mavenCentral()
 	maven { setUrl("https://maven.vaadin.com/vaadin-prereleases") }
 	maven { setUrl("https://maven.vaadin.com/vaadin-addons") }
 }
 
-configurations {
-	developmentOnly
-	runtimeClasspath {
-		extendsFrom developmentOnly
-	}
-}
-
 dependencies {
-	implementation(project(':backend'))
-	implementation('dev.hilla:hilla-react')
-	implementation('dev.hilla:hilla-spring-boot-starter')
-	implementation('org.parttio:line-awesome:1.1.0')
-	implementation('org.springframework.boot:spring-boot-starter-validation')
-	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
-	runtimeOnly('com.h2database:h2')
+	implementation 'org.parttio:line-awesome:1.1.0'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'com.vaadin:vaadin-spring-boot-starter'
+	implementation project(':backend')
+	runtimeOnly 'com.h2database:h2'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
@@ -57,6 +38,6 @@ dependencies {
 
 dependencyManagement {
 	imports {
-		mavenBom "dev.hilla:hilla-bom:$hillaVersion"
+		mavenBom "com.vaadin:vaadin-bom:$vaadinVersion"
 	}
 }

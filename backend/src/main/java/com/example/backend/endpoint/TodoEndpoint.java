@@ -1,10 +1,10 @@
-package com.example.backend.endpoints.helloreact;
+package com.example.backend.endpoint;
 
 import com.example.backend.data.Todo;
 import com.example.backend.repository.TodoRepository;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
-import dev.hilla.Endpoint;
-import dev.hilla.Nonnull;
+import com.vaadin.hilla.Endpoint;
+import com.vaadin.hilla.Nonnull;
 
 import java.util.List;
 
