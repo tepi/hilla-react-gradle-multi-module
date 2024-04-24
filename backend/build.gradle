@@ -42,5 +42,5 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 jar {
-	exclude 'com/example/backend/Application.class'
+	exclude 'com/example/backend/BackendApplication.class'
 }
